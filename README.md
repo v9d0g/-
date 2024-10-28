@@ -9,11 +9,11 @@
 
 并发性太差，请求太多就直接崩掉，垃圾请求无法过滤，也没有定时清理日志：
 
-![[E5316FB6-9B46-4755-AC5F-819E05D9FC381e1ff3e8df16470a.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/E5316FB6-9B46-4755-AC5F-819E05D9FC381e1ff3e8df16470a.png)
 
 后台管理功能集合太捞：
 
-![[0DFFD875-0B62-4bf1-A698-B8D2AA45C297ee9b72498b16a4b2.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/0DFFD875-0B62-4bf1-A698-B8D2AA45C297ee9b72498b16a4b2.png)
 
 各种不合理、没有任何日志保存和分析的东西，也没有定时备份、文章以markdown格式上传但图片只能依靠图床等等问题。
 
@@ -220,11 +220,11 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 前端的布局大致准备就这样了，但是由于对vue的不熟悉（小看前端开发了）。很多组件之间数据的交互并不规范，有待学习。
 
-![[660e4f079f345e8d038d13c2.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/660e4f079f345e8d038d13c2.png)
 
 
 
-![[660e4ef49f345e8d038c895e.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/660e4ef49f345e8d038c895e.png)
 
 `【2024-04-04更新】`
 
@@ -232,13 +232,13 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 大致风格基本定下来了，现在需要完成的就是对路由的规划了。目前的主页会一次性加载所有样式，但是不显示。这种方式不知道会不会导致访问速度变慢，后续可能会更改。还有就是后台登录的页面需要优化，以及现在可以开始着手后端的编写了。
 
-![[66168d1968eb935713e30afd.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/66168d1968eb935713e30afd.png)
 
-![[66168d3c68eb935713e33536.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/66168d3c68eb935713e33536.png)
 
-![[66168d4f68eb935713e38205.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/66168d4f68eb935713e38205.png)
 
-![[66168d7b68eb935713e3b5cc.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/66168d7b68eb935713e3b5cc.png)
 
 `【2024-04-10更新】`
 
@@ -246,10 +246,10 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 这次把移动端的适配效果做的差不多了，然后把布局整理了一下，以及一些组件的增删。目前记录的所有文章将不会在现在这个博客里面上传，后续会统一上传至新博客。
 
-![[6641dcc60ea9cb1403ea433f.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/6641dcc60ea9cb1403ea433f.png)
 
 
-![[6641dcd60ea9cb1403ea5856.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/6641dcd60ea9cb1403ea5856.png)
 
 
 `【2024-05-13更新】`
@@ -260,24 +260,26 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 只有断断续续的改改代码和提进一下开发进度
 
 重新调整了一下主页面的UI和功能 并且初步写好了前端的请求接口
-![[Pasted image 20241028083843.png]]![[Pasted image 20241028083928.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028083843.png)
+
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028083928.png)
 
 通过文章内容提取目录以及文章内图片的适应大小暂未完成
-![[Pasted image 20241028083949.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028083949.png)
 
 简单的设计了后端的页面和组件
-![[Pasted image 20241028084154.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084154.png)
 
-![[Pasted image 20241028084208.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084208.png)
 
-![[Pasted image 20241028084216.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084216.png)
 
-![[Pasted image 20241028084224.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084224.png)
 
-![[Pasted image 20241028084232.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084232.png)
 
-![[Pasted image 20241028084238.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084238.png)
 
-![[Pasted image 20241028084244.png]]
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084244.png)
 
 `【2024-10-24更新】`
