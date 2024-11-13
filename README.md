@@ -360,7 +360,7 @@ vscode通过一个GO ENV文件来指定环境变量 一般在左下角 文件路
 
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241113160442.png)
 
-![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/[Pasted%20image%2020241113160515.png)
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241113160515.png)
 
 博客文章中的样式基本完成了
 
