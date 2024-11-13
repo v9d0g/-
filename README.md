@@ -116,6 +116,9 @@ yarn add vue@2.7.14
 
 由于是第一次使用vue，它的报错十分奇怪。不符合代码规范就会报错，无法正常显示，现在主要出现的报错是关于空行和分号的错误。这个直接在vscode内部修改格式化的相关信息，统一使用两格作为缩进。
 
+---
+`已弃用`
+
 代码高亮
 [highlightjs.js](https://highlightjs.org/#usage)
 
@@ -155,16 +158,68 @@ npm install echarts-wordcloud
 npm install --save core-js
 ```
 
-fancybox
-```
-yarn add @fancyapps/fancybox jquery
-
-yarn add jquery
+图片放大fancybox
+```sh
+yarn add @fancyapps/ui
 ```
 
+---
 
-解决跨域
-[GO CORS](https://www.bilibili.com/video/BV1CE411H7bQ?p=12&spm_id_from=pageDriver&vd_source=5a8a81ceda2c7e4a39c105be7125bb84)
+#### markdown文本处理
+
+最开始想法是后端上传编辑markdown->后端转html->前端显示
+后来发现这种方式
+`优点`:样式自定义化程度高 可以做一些效果很好的ui显示
+`缺点`:只能使用不安全的v-html来渲染前端 并且调整ui会增加前端的渲染压力
+
+markdown前端显示
+```sh
+yarn add markdown-it-vue
+```
+然后发现这个组件其实集成了echarts和highlight.js (草了 那我前面花这么多时间 写自定义ui组件在干嘛)
+
+虽然这个组件集成了很多实用的组件 fancybox(图片放大) echarts(图表) highlight(代码高亮) latex(数学公式富文本)等等
+
+但根据作者的issue中提到的 无法自定义代码高亮的风格 而且对markdown渲染的文本没有办法更进一步自定义
+
+不过好在通过引入highlight的样式和修改一下代码高亮的style可以实现对应效果
+```vue
+import 'highlight.js/styles/atom-one-dark.css'; // 引入highlight.js的atom-one-dark样式
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #282c34;
+  border-radius: 3px;
+}
+
+/* 字体高亮 */
+code {
+  font-size: 100%;
+  color: #ffffff;
+  word-wrap: break-word;
+}
+
+.markdown-body code {
+  padding: .2em .4em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgb(15 45 74);
+  border-radius: 3px;
+}
+
+/* 链接 */
+.markdown-body a {
+  color: #53b151;
+  text-decoration: none;
+}
+```
+
+这个库中对目录列表的生成存在问题 原计划是使用`[TOC]`来指定markdown中生成目录结构 但是该组件不能正常的生成目录结构 于是需要自己设计算法
+
 
 
 ## 后端
@@ -215,8 +270,19 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 这里不知道为什么我每次打开vscode都得重新设置一遍。
 
+【解决方案】
+
+vscode通过一个GO ENV文件来指定环境变量 一般在左下角 文件路径可以通过 cmd中GO ENV来查看
+
+在此设置GOROOT便不会出现该问题
+
+解决跨域
+[GO CORS](https://www.bilibili.com/video/BV1CE411H7bQ?p=12&spm_id_from=pageDriver&vd_source=5a8a81ceda2c7e4a39c105be7125bb84)
+
 
 # 目前进度：
+
+## `【2024-04-04更新】`
 
 前端的布局大致准备就这样了，但是由于对vue的不熟悉（小看前端开发了）。很多组件之间数据的交互并不规范，有待学习。
 
@@ -226,9 +292,11 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/660e4ef49f345e8d038c895e.png)
 
-`【2024-04-04更新】`
+
 
 ------
+
+## `【2024-04-10更新】`
 
 大致风格基本定下来了，现在需要完成的就是对路由的规划了。目前的主页会一次性加载所有样式，但是不显示。这种方式不知道会不会导致访问速度变慢，后续可能会更改。还有就是后台登录的页面需要优化，以及现在可以开始着手后端的编写了。
 
@@ -240,11 +308,12 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/66168d7b68eb935713e3b5cc.png)
 
-`【2024-04-10更新】`
 
 ------
 
-这次把移动端的适配效果做的差不多了，然后把布局整理了一下，以及一些组件的增删。目前记录的所有文章将不会在现在这个博客里面上传，后续会统一上传至新博客。
+## `【2024-05-13更新】`
+
+这次把移动端的适配效果做的差不多了，然后把布局整理了一下，以及一些组件的增删。目前记录的所有文章将不会在现在这个[博客](http://v9d0g.fun)里面上传，后续会统一上传至新博客。
 
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/6641dcc60ea9cb1403ea433f.png)
 
@@ -252,9 +321,10 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/6641dcd60ea9cb1403ea5856.png)
 
 
-`【2024-05-13更新】`
 
 ---
+
+## `【2024-10-24更新】`
 
 从七月份开始就一直很忙
 只有断断续续的改改代码和提进一下开发进度
@@ -282,4 +352,25 @@ $env:GOROOT="S:\Cyber Security\2024\go"
 
 ![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241028084244.png)
 
-`【2024-10-24更新】`
+---
+
+## 【2024-11-13更新】
+
+借用某知名博客的图床图片测试
+
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241113160442.png)
+
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/[Pasted%20image%2020241113160515.png)
+
+博客文章中的样式基本完成了
+
+移动端适配 
+
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241113161046.png)
+
+![](https://raw.githubusercontent.com/v9d0g/my-blog-development-logs-/refs/heads/main/images/Pasted%20image%2020241113161147.png)
+
+TODO:
+ - 设计评论组件和预留接口
+ - 封装axios接口和获取数据异常弹窗组件
+ - 后台
